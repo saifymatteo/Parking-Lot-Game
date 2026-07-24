@@ -14,8 +14,8 @@ You can try the [web version](https://parking.game.saifulmashuri.com/) of the ga
 
 ## Technology
 
-- Flutter: `3.32.8`
-- Dart: `3.8.1`
+- Flutter: `^3.44.0`
+- Dart: `^3.12.0`
 
 ## Compiles
 
