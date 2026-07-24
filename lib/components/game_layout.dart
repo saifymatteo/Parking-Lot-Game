@@ -16,7 +16,7 @@ class GameLayout extends StatelessWidget {
     const tileWidth = 100;
 
     return Consumer<ParkingLot>(
-      builder: (_, provider, __) {
+      builder: (_, provider, _) {
         final countPortrait = constraints.maxWidth ~/ tileWidth;
         final countHorizontal = constraints.maxHeight ~/ tileWidth;
 
@@ -26,8 +26,9 @@ class GameLayout extends StatelessWidget {
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount:
-                  constraints.maxWidth > 600 ? countHorizontal : countPortrait,
+              crossAxisCount: constraints.maxWidth > 600
+                  ? countHorizontal
+                  : countPortrait,
               mainAxisSpacing: 10,
               crossAxisSpacing: 10,
               childAspectRatio: tileWidth / tileHeight,

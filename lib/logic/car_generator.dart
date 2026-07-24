@@ -39,7 +39,7 @@ enum CarBrand {
       dodge => 'Dodge',
       volkswagen => 'Volkswagen',
       kia => 'Kia',
-      jeep => 'Jeep'
+      jeep => 'Jeep',
     };
   }
 }
@@ -58,9 +58,7 @@ extension CarPlateExtension on CarBrand {
     final prefix = String.fromCharCodes(
       Iterable.generate(
         3,
-        (_) => chars.codeUnitAt(
-          random.nextInt(chars.length),
-        ),
+        (_) => chars.codeUnitAt(random.nextInt(chars.length)),
       ),
     );
     final suffix = random.nextInt(8999) + 1000;

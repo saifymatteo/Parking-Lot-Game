@@ -10,7 +10,7 @@ class GameControl extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<ParkingLot>(
-      builder: (_, provider, __) {
+      builder: (_, provider, _) {
         return Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
@@ -42,10 +42,10 @@ class GameControl extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                                 decoration: TextDecoration.underline,
                               ),
-                            )
+                            ),
                           ],
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -57,20 +57,14 @@ class GameControl extends StatelessWidget {
                       !provider.isFull ? _onPressPark(context) : null,
                   style: ElevatedButton.styleFrom(
                     fixedSize: Size(MediaQuery.of(context).size.width, 50),
-                    backgroundColor:
-                        provider.isFull ? Colors.red : Colors.green,
+                    backgroundColor: provider.isFull
+                        ? Colors.red
+                        : Colors.green,
                   ),
-                  child: const Text(
-                    'PARK!',
-                    style: TextStyle(fontSize: 20),
-                  ),
+                  child: const Text('PARK!', style: TextStyle(fontSize: 20)),
                 ),
               ),
-              const Icon(
-                Icons.drive_eta_rounded,
-                size: 50,
-                color: Colors.red,
-              ),
+              const Icon(Icons.drive_eta_rounded, size: 50, color: Colors.red),
               const Text(
                 'Click on a busy parking slot to unpark the car',
                 textAlign: TextAlign.center,

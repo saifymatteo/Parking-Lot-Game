@@ -11,10 +11,7 @@ class TitleMain extends StatelessWidget {
         child: Text(
           'Welcome to Parking Lot',
           textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 80,
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(fontSize: 80, fontWeight: FontWeight.bold),
         ),
       ),
     );

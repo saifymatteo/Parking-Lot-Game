@@ -6,10 +6,7 @@ void showSnackBar(BuildContext context, String text) {
     ..hideCurrentSnackBar()
     ..showSnackBar(
       SnackBar(
-        content: Text(
-          text,
-          style: GoogleFonts.jetBrainsMono(fontSize: 16),
-        ),
+        content: Text(text, style: GoogleFonts.jetBrainsMono(fontSize: 16)),
       ),
     );
 }

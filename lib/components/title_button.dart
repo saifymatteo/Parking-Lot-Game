@@ -8,10 +8,7 @@ import 'package:provider/provider.dart';
 import '../screens/screens.dart';
 
 class TitleButton extends StatefulWidget {
-  const TitleButton({
-    super.key,
-    required this.textEditingController,
-  });
+  const TitleButton({super.key, required this.textEditingController});
 
   final TextEditingController textEditingController;
 
@@ -60,17 +57,15 @@ class _TitleButtonState extends State<TitleButton> {
                 keyboardType: TextInputType.number,
                 inputFormatters: [
                   FilteringTextInputFormatter.digitsOnly,
-                  TextInputFormatter.withFunction(
-                    (oldValue, newValue) {
-                      final current = int.tryParse(newValue.text);
+                  TextInputFormatter.withFunction((oldValue, newValue) {
+                    final current = int.tryParse(newValue.text);
 
-                      if (current != null && current > _maxParking) {
-                        return oldValue;
-                      }
+                    if (current != null && current > _maxParking) {
+                      return oldValue;
+                    }
 
-                      return newValue;
-                    },
-                  ),
+                    return newValue;
+                  }),
                 ],
                 textAlign: TextAlign.center,
                 decoration: InputDecoration(
@@ -83,15 +78,13 @@ class _TitleButtonState extends State<TitleButton> {
                   ),
                   hintText: 'Enter desired number from 1-$_maxParking',
                 ),
-                onSubmitted: (_) => _onSubmitSlots(
-                  widget.textEditingController.text,
-                ),
+                onSubmitted: (_) =>
+                    _onSubmitSlots(widget.textEditingController.text),
               ),
             ),
             ElevatedButton(
-              onPressed: () => _onSubmitSlots(
-                widget.textEditingController.text,
-              ),
+              onPressed: () =>
+                  _onSubmitSlots(widget.textEditingController.text),
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 20),
                 shape: RoundedRectangleBorder(
@@ -122,9 +115,7 @@ class _TitleButtonState extends State<TitleButton> {
       provider.setSlots = int.parse(input);
       Navigator.push(
         context,
-        CupertinoPageRoute(
-          builder: (_) => const PageGame(),
-        ),
+        CupertinoPageRoute(builder: (_) => const PageGame()),
       );
     }
   }
